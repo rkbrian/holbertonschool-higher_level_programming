@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-def my_function(counter=89):
-    return counter + 1
-
-print(my_function())
+a = [1, 2, 3, 4]
+b = a
+print(b)
