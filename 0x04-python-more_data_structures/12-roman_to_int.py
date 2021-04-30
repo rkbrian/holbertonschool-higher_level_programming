@@ -10,4 +10,4 @@ def roman_to_int(roman_string):
         lasti = len(roman_string) - 1
         if roman_string[lasti - 1] == 'I' and roman_string[lasti] != 'I':
             num -= 2
-        return num
+        return int(num)
