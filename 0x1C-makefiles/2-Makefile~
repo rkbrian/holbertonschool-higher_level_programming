@@ -1,8 +1,0 @@
-CC:=gcc
-SRC:=$(NAME).c
-OBJ:=$(NAME).o
-NAME:=all
-all: executable
-holberton:
-	$(CC) -c -o $(OBJ) $(SRC)
-	$(CC) $(OBJ) -o holberton
