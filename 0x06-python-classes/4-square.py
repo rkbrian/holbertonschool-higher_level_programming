@@ -10,27 +10,25 @@
 class Square:
     """ def and initiate size, manage output, no type preference, raise err """
 
-    def __init__(self, size=0):
-        self.__size = size
-        if isinstance(size, int) is False:
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
-
     @property
     def size(self):
+        """getter to retrieve size"""
         return self.__size
 
     @size.setter
     def size(self, value):
+        """setter to set size value"""
         if isinstance(value, int) is False:
             raise TypeError("size must be an integer")
-        if value < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
+        else:
+            self.__size = value
+
+    def __init__(self, size=0):
+        """initialize objects"""
+        self.__size = size
 
     def area(self):
+        """area calculation"""
         return (self.__size ** 2)
-        if isinstance(size, int) is False:
-            raise TypeError("size must be an integer")
-        if size < 0:
-            raise ValueError("size must be >= 0")
