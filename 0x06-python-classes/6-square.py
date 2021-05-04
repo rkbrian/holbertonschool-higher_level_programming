@@ -33,16 +33,19 @@ class Square:
     @position.setter
     def position(self, value):
         """setter to set position"""
-        if (isinstance(value, tuple) and isinstance(value[1], int))is False or\
-           len(value) < 2 or value[0] < 0 or value[1] < 0:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = value
+        self.__position = value
 
     def __init__(self, size=0, position=(0, 0)):
         """initialize objects"""
         self.__size = size
-        self.__position = position
+        if isinstance(position, tuple) is False:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif len(position) < 2 or isinstance(position[1], int) is False:
+            raise IndexError("position must be a tuple of 2 positive integers")
+        elif position[0] < 0 or position[1] < 0:
+            raise ValueError("position must be a tuple of 2 positive integers")
+        else:
+            self.__position = position
 
     def area(self):
         """area calculation"""
@@ -52,8 +55,10 @@ class Square:
         """hashtag matrix printing"""
         if self.__size == 0:
             print()
+        elif self.__position == None:
+            raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            for i in range(1, self.__position[1] + 1):
+            for i in range(self.__position[1]):
                 print()
             for j in range(self.__size):
                 print("{}".format(" ") * self.__position[0], end="")
