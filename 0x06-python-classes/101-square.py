@@ -58,7 +58,7 @@ class Square:
     def my_print(self):
         """hashtag matrix printing"""
         if self.__size == 0:
-            print()
+            return ''
         elif self.__position is None:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
