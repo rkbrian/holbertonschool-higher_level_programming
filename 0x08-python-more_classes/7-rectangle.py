@@ -60,8 +60,9 @@ class Rectangle:
         else:
             hashmatrix = ""
             for i in range(self.__height - 1):
-                hashmatrix += "{}\n".format(self.print_symbol * self.__width)
-            hashmatrix += "{}".format(self.print_symbol * self.__width)
+                hashmatrix += "{}".format(self.print_symbol) * self.__width
+                hashmatrix += "\n"
+            hashmatrix += "{}".format(self.print_symbol) * self.__width
             return hashmatrix
 
     def __repr__(self):
