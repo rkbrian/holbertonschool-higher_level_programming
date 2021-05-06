@@ -52,7 +52,7 @@ class Rectangle:
     def __str__(self):
         """visualizing hashtag string output"""
         if self.__width == 0 or self.__height == 0:
-            return 0
+            return ""
         else:
             hashmatrix = ""
             for i in range(self.__height - 1):
