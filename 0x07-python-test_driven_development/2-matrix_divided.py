@@ -19,9 +19,9 @@ def matrix_divided(matrix, div):
         if len(matrix[k]) != len(matrix[0]):
             errstr2 = "Each row of the matrix must have the same size"
             raise TypeError(errstr2)
-    if div == 0:
-        raise ZeroDivisionError("division by zero")
     if type(div) != int and type(div) != float:
         raise TypeError("div must be a number")
+    if div == 0:
+        raise ZeroDivisionError("division by zero")
     Keanu = [list(map(lambda j: round(j / div, 2), Neo)) for Neo in matrix]
     return Keanu
