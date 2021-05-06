@@ -36,6 +36,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
+        """height setter"""
         if isinstance(value, int) is False:
             raise TypeError("height must be an integer")
         elif value < 0:
@@ -75,6 +76,7 @@ class Rectangle:
         print("Bye rectangle...")
 
     def bigger_or_equal(rect_1, rect_2):
+        """static method to find the biggest rectangle area, could be equal"""
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
