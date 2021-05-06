@@ -5,10 +5,13 @@
 class Rectangle:
     """class Rectangle"""
 
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """initiation with optional width and height"""
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -39,12 +42,6 @@ class Rectangle:
         else:
             self.__height = value
 
-    def number_of_instances(self, value):
-        self.number_of_instances = 0
-
-
-
-
     def area(self):
         """area calculation"""
         return (self.__width * self.__height)
@@ -72,4 +69,5 @@ class Rectangle:
 
     def __del__(self):
         """action while deleting the imported class: print message"""
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
