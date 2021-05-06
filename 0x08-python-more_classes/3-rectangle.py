@@ -53,8 +53,9 @@ class Rectangle:
         """visualizing hashtag string output"""
         if self.__width == 0 or self.__height == 0:
             return 0
-        hashmatrix = ""
-        for i in range(self.__height - 1):
-            hashmatrix += "#" * self.__width + "\n"
-        hashmatrix += "#" * self.__width
-        return hashmatrix
+        else:
+            hashmatrix = ""
+            for i in range(self.__height - 1):
+                hashmatrix += "#" * self.__width + "\n"
+            hashmatrix += "#" * self.__width
+            return hashmatrix
