@@ -13,6 +13,8 @@ def matrix_divided(matrix, div):
 
     errstr1 = "matrix must be a matrix (list of lists) of integers/floats"
     for k in range(len(matrix)):
+        if type(matrix[k]) != list or len(matrix[k]) == 0:
+            raise TypeError(errstr1)
         for l in range(len(matrix[k])):
             if type(matrix[k][l]) != int and type(matrix[k][l]) != float:
                 raise TypeError(errstr1)
@@ -21,6 +23,8 @@ def matrix_divided(matrix, div):
             raise TypeError(errstr2)
     if type(div) != int and type(div) != float:
         raise TypeError("div must be a number")
+    if type(matrix) != list or len(matrix) == 0:
+        raise TypeError(errstr1)
     if div == 0:
         raise ZeroDivisionError("division by zero")
     Keanu = [list(map(lambda j: round(j / div, 2), Neo)) for Neo in matrix]
