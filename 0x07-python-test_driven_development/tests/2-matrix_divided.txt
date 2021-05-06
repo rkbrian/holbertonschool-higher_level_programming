@@ -23,7 +23,9 @@ ZeroDivisionError: division by zero
 [[nan, nan, nan], [nan, nan, nan]]
 >>> matrix_divided([[-0.01, 0.02, 1/4], [(2 + 3), 5, 6]], 0.058)
 [[-0.17, 0.34, 4.31], [86.21, 86.21, 103.45]]
->>> matrix_divided([[1, 2, 3], [4, "where is Wally?", 6]], 20)
+>>> matrix_divided([[1, 2, 3], [4, "I'm stuck in the matrix!", 6]], 20)
 Traceback (most recent call last):
 ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix_divided([[1]], 2)
+[[0.5]]
