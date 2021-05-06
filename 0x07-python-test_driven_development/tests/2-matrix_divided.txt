@@ -29,3 +29,11 @@ Traceback (most recent call last):
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 >>> matrix_divided([[1]], 2)
 [[0.5]]
+>>> matrix_divided(["Agent Smith", "Agent Smith", "Agent Smith"], -300)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix_divided([], -300)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
