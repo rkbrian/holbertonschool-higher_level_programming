@@ -41,4 +41,3 @@ ValueError: m_b can't be empty
 Traceback (most recent call last):
 ...
 TypeError: matrix_mul() takes 2 positional arguments but 3 were given
->>> matrix_mul([1, 2], [[1, 2], [3, 4]])
