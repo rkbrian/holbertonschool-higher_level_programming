@@ -13,11 +13,11 @@ def text_indentation(text):
         newtext = text
         cutter = ".?:"
         for j in range(len(text)):
-            newtext = newtext.replace(".  ", ". ", 1)
-            newtext = newtext.replace("?  ", "? ", 1)
-            newtext = newtext.replace(":  ", ": ", 1)
+            newtext = newtext.replace(". ", ".", 1)
+            newtext = newtext.replace("? ", "?", 1)
+            newtext = newtext.replace(": ", ":", 1)
         for i in range(len(newtext)):
             if not newtext[i - 1] in cutter:
                 print("{}".format(newtext[i]), end="")
             else:
-                print("{}".format("\n"))
+                print("\n\n{}".format(newtext[i]), end="")
