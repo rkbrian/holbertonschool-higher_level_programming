@@ -20,29 +20,37 @@ def matrix_mul(m_a, m_b):
         raise TypeError("m_b must be a list of lists")
     if len(m_a) == 0:
         raise ValueError("m_a can't be empty")
+    if m_a == [[] * len(m_a)]:
+        raise ValueError("m_a can't be empty")
     if len(m_b) == 0:
+        raise ValueError("m_b can't be empty")
+    if m_b == [[] * len(m_b)]:
         raise ValueError("m_b can't be empty")
     for ai in range(len(m_a)):
         for aj in range(len(m_a[ai])):
-            if type(m_a[ai][aj]) != int and type(m_a[ai][aj]) != int:
+            if type(m_a[ai][aj]) != int and type(m_a[ai][aj]) != float:
                 raise TypeError("m_a should contain only integers or floats")
         if len(m_a[ai]) != len(m_a[0]):
             raise TypeError("each row of m_a must be of the same size")
     for bi in range(len(m_b)):
         for bj in range(len(m_b[bi])):
-            if type(m_b[bi][bj]) != int and type(m_b[bi][bj]) != int:
+            if type(m_b[bi][bj]) != int and type(m_b[bi][bj]) != float:
                 raise TypeError("m_b should contain only integers or floats")
         if len(m_b[bi]) != len(m_b[0]):
             raise TypeError("each row of m_b must be of the same size")
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
     """Error messages above, multiplication below"""
-    c = [[]]
     ai = len(m_a)
     ajbi = len(m_a[0])
     bj = len(m_b[0])
+    c = []
     for i in range(ai):
+        row = []
         for j in range(bj):
+            celement = 0
             for rowcol in range(ajbi):
-                c[i][j] += m_a[i][rowcol] * m_b[rowcol][j]
+                celement += (m_a[i][rowcol] * m_b[rowcol][j])
+            row.append(celement)
+        c.append(row)
     return c
