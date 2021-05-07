@@ -1,0 +1,43 @@
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+>>> matrix_mul([[1, -2, 0.5], [7.25, 40, -20]], [[1, -2.7], [(3 + 4.5), 4], [5, -5748573856]])
+[[-11.5, -2874286938.7], [207.25, 114971477260.425]]
+>>> matrix_mul("The Matrix", [[1, 2], [3, 4]])
+Traceback (most recent call last):
+...
+TypeError: m_a must be a list
+>>> matrix_mul([[1, 2], [3, 4]], "The Matrix Reloaded")
+Traceback (most recent call last):
+...
+TypeError: m_b must be a list
+>>> matrix_mul([[1, 2], [3, 4, 5]], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+...
+TypeError: each row of m_a must be of the same size
+>>> matrix_mul([[1, 2], [3, 4]])
+Traceback (most recent call last):
+...
+TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+>>> matrix_mul()
+Traceback (most recent call last):
+...
+TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, "Neo, come back to the matrix"]])
+Traceback (most recent call last):
+...
+TypeError: m_b should contain only integers or floats
+>>> matrix_mul([[1, 2], "There's no spoon"], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+...
+TypeError: m_a should contain only integers or floats
+>>> matrix_mul([[1, 2, 3], [4, 5, 6]], [[1, 2, 3], [3, 4, 5]])
+Traceback (most recent call last):
+...
+ValueError: m_a and m_b can't be multiplied
+>>> matrix_mul([[1, 2], [3, 4]], [[]])
+Traceback (most recent call last):
+...
+ValueError: m_b can't be empty
+>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+...
+TypeError: matrix_mul() takes 2 positional arguments but 3 were given
