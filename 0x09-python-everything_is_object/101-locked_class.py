@@ -1,12 +1,10 @@
 #!/usr/bin/python3
-"""
-class Locked_Class
+"""class LockedClass: module for a locked class
 """
 
 
-class Locked_Class:
-    """
-    Class to prevents the user from dynamically creating
+class LockedClass:
+    """A class that prevents the user from dynamically creating
     new instance attributes.
     """
 
