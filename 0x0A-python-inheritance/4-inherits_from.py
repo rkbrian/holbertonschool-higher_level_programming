@@ -3,6 +3,7 @@
 module to return True or False for class inheritance judgment
 """
 
+
 def inherits_from(obj, a_class):
     """inherited_from: function to return if the instance is inherited"""
 

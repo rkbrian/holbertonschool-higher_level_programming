@@ -3,6 +3,7 @@
 module for empty class
 """
 
+
 class BaseGeometry:
     """BaseGeometry: empty class"""
 

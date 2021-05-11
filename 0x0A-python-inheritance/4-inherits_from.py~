@@ -1,7 +1,0 @@
-#!/usr/bin/python3
-"""
-module to return True or False for class inheritance judgment
-"""
-
-def inherits_from(obj, a_class):
-    """is_name_class: function to return if it is the instance's class"""
