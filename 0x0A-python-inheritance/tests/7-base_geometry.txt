@@ -48,7 +48,8 @@ TypeError: tuple must be an integer
 Traceback (most recent call last):
 ...
 TypeError: curly must be an integer
->>> bg.integer_validator("It's a no ney never", None)
+>>> bg.integer_validator("It's a no nay never", None)
 Traceback (most recent call last):
 ...
-TypeError: It's a no ney never must be an integer
+TypeError: It's a no nay never must be an integer
+>>> bg.integer_validator("rumor has it", True)
