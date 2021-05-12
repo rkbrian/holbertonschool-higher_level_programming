@@ -3,7 +3,7 @@
 
 
 def append_write(filename="", text=""):
-    """"""
+    """function to append some texts to the given file name"""
 
     with open(filename, mode="a", encoding="utf-8") as Appendthis:
-        Appendthis.write(text)
+        return Appendthis.write("{}".format(text))
