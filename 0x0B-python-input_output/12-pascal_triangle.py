@@ -14,8 +14,7 @@ def pascal_triangle(n):
     list_a = [1]
     list_b = [1]
     list_c = []
-    lily = []
-    print(list_a)
+    lily = [[1]]
     for i in range(1, n):
         list_a.insert(0, 0)
         list_b.append(0)
