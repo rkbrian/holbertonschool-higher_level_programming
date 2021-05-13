@@ -9,6 +9,8 @@ Hahahahahahahahahahahahahahahahahaha......
 def pascal_triangle(n):
     """function to create pasccal triangle"""
 
+    if n <= 0:
+        return []
     list_a = [1]
     list_b = [1]
     list_c = []
