@@ -2,7 +2,6 @@
 """module for class Base"""
 
 
-
 class Base:
     """base class for unittest projects"""
 
@@ -10,7 +9,7 @@ class Base:
 
     def __init__(self, id=None):
         """class constructor"""
-        if id != None:
+        if id is not None:
             self.id = id
         else:
             __nb_objects += 1
