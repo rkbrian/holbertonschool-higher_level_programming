@@ -42,12 +42,6 @@ class Rectangle(Base):
         hashmatrix += "{}".format(self.print_symbol) * self.__width
         print(hashmatrix)
 
-    def __str__(self):
-        """return rectangle id"""
-        str1 = "({}) {}/{}".format(self.id, self.__x, self.__y)
-        str2 = " - {}/{}".format(self.__width, self.__height)
-        return "[Rectangle] " + str1 + str2
-
     @property
     def width(self):
         """getter for width"""
