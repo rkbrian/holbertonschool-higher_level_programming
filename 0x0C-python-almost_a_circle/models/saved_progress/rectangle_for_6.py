@@ -35,16 +35,12 @@ class Rectangle(Base):
 
     def display(self):
         """visualize the rectangle"""
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        else:
-            hashmatrix = "\n" * self.__y
-            xspace = " " * self.__x
-            for i in range(self.__height - 1):
-                hashmatrix += xspace + "{}".format(self.print_symbol) * self.__width
-                hashmatrix += "\n"
-            hashmatrix += xspace + "{}".format(self.print_symbol) * self.__width
-            print(hashmatrix)
+        hashmatrix = ""
+        for i in range(self.__height - 1):
+            hashmatrix += "{}".format(self.print_symbol) * self.__width
+            hashmatrix += "\n"
+        hashmatrix += "{}".format(self.print_symbol) * self.__width
+        print(hashmatrix)
 
     def __str__(self):
         """return rectangle id"""
