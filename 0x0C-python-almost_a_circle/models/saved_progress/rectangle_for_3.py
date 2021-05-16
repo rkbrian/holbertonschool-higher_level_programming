@@ -8,8 +8,6 @@ from models.base import Base
 class Rectangle(Base):
     """class that inherits class Base"""
 
-    print_symbol = "#"
-
     def __init__(self, width, height, x=0, y=0, id=None):
         """class constructor"""
         self.width = width
@@ -28,19 +26,6 @@ class Rectangle(Base):
             raise ValueError("{} must be > 0".format(attr))
         if (attr == "x" and value < 0) or (attr == "y" and value < 0):
             raise ValueError("{} must be >= 0".format(attr))
-
-    def area(self):
-        """the area method implementation"""
-        return (self.__width * self.__height)
-
-    def display(self):
-        """visualize the rectangle"""
-        hashmatrix = ""
-        for i in range(self.__height - 1):
-            hashmatrix += "{}".format(self.print_symbol) * self.__width
-            hashmatrix += "\n"
-        hashmatrix += "{}".format(self.print_symbol) * self.__width
-        print(hashmatrix)
 
     @property
     def width(self):
