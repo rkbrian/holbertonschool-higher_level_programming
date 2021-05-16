@@ -8,7 +8,7 @@ from models.base import Base
 class Rectangle(Base):
     """class that inherits class Base"""
 
-    print_symbol = "#"
+    symb = "#"
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """class constructor"""
@@ -38,13 +38,13 @@ class Rectangle(Base):
         if self.__width == 0 or self.__height == 0:
             return ""
         else:
-            hashmatrix = "\n" * self.__y
+            hashy = "\n" * self.__y
             xspace = " " * self.__x
             for i in range(self.__height - 1):
-                hashmatrix += xspace + "{}".format(self.print_symbol) * self.__width
-                hashmatrix += "\n"
-            hashmatrix += xspace + "{}".format(self.print_symbol) * self.__width
-            print(hashmatrix)
+                hashy += xspace + "{}".format(self.symb) * self.__width
+                hashy += "\n"
+            hashy += xspace + "{}".format(self.symb) * self.__width
+            print(hashy)
 
     def __str__(self):
         """return rectangle id"""
