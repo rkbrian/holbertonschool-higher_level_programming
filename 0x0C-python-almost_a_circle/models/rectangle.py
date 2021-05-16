@@ -20,7 +20,9 @@ class Rectangle(Base):
         """integer validator"""
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(attr))
-        if (attr == 'width' and value <= 0) or (attr == 'height' and value <= 0):
+        if (attr == 'width' and value <= 0):
+            raise ValueError("{} must be > 0".format(attr))
+        if (attr == 'height' and value <= 0):
             raise ValueError("{} must be > 0".format(attr))
         if (attr == "x" and value < 0) or (attr == "y" and value < 0):
             raise ValueError("{} must be >= 0".format(attr))
