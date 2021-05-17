@@ -29,4 +29,4 @@ class Base:
         import json
         if list_objs is None:
             return []
-        return cls(to be continued)
+        
