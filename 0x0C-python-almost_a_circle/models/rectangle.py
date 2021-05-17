@@ -74,7 +74,6 @@ class Rectangle(Base):
         rec_dict["y"] = self.y
         return rec_dict
 
-
     @property
     def width(self):
         """getter for width"""
