@@ -10,6 +10,7 @@ class Rectangle(Base):
     """class that inherits class Base"""
 
     symb = "#"
+    orderarg = ["id", "width", "height", "x", "y"]
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """class constructor"""
@@ -56,7 +57,6 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """assign arguments to each attribute"""
         if args and len(args) > 0:
-            orderarg = ["id", "width", "height", "x", "y"]
             for i in range(len(args)):
                 setattr(self, orderarg[i], args[i])
         else:
@@ -67,11 +67,11 @@ class Rectangle(Base):
     def to_dictionary(self):
         """return the dictionary representation of Rectangle"""
         rec_dict = {}
-        rec_dict["id"] = self.id
-        rec_dict["width"] = self.width
-        rec_dict["height"] = self.height
-        rec_dict["x"] = self.x
-        rec_dict["y"] = self.y
+        rec_dict[self.orderarg[0]] = self.id
+        rec_dict[self.orderarg[1]] = self.width
+        rec_dict[self.orderarg[2]] = self.height
+        rec_dict[self.orderarg[3]] = self.x
+        rec_dict[self.orderarg[4]] = self.y
         return rec_dict
 
     @property
