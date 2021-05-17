@@ -3,6 +3,7 @@
 
 
 from models.base import Base
+import inspect
 
 
 class Rectangle(Base):
@@ -62,6 +63,17 @@ class Rectangle(Base):
             for j in kwargs:
                 if hasattr(self, j) is True:
                     setattr(self, j, kwargs[j])
+
+    def to_dictionary(self):
+        """return the dictionary representation of Rectangle"""
+        rec_dict = {}
+        rec_dict["id"] = self.id
+        rec_dict["width"] = self.width
+        rec_dict["height"] = self.height
+        rec_dict["x"] = self.x
+        rec_dict["y"] = self.y
+        return rec_dict
+
 
     @property
     def width(self):
