@@ -2,6 +2,9 @@
 """module for class Base"""
 
 
+import json
+
+
 class Base:
     """base class for unittest projects"""
 
@@ -26,7 +29,9 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """class method to write JSON str rep"""
-        import json
-        if list_objs is None:
-            return []
-        return cls(to be continued)
+        with open(cls.__name__ + ".json", mode="w") as JasonBourne:
+            Jason = []
+            if list_objs:
+                for c in list_objs:
+                    Jason.append(cls.to_dictionary(c))
+            JasonBourne.write(Base.to_json_string(Jason))
