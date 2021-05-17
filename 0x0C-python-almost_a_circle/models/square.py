@@ -22,6 +22,17 @@ class Square(Rectangle):
         str2 = " - {}".format(self.__width)
         return "[Square] " + str1 + str2
 
+    def update(self, *args, **kwargs):
+        """assign arguments to each attribute"""
+        if args and len(args) > 0:
+            orderarg = ["id", "size", "x", "y"]
+            for i in range(len(args)):
+                setattr(self, orderarg[i], args[i])
+        else:
+            for j in kwargs:
+                if hasattr(self, j) is True:
+                    setattr(self, j, kwargs[j])
+
     @property
     def size(self):
         """getter for size"""

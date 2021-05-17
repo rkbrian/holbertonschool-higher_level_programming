@@ -54,7 +54,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """assign arguments to each attribute"""
-        if args is True and len(args) > 0:
+        if args and len(args) > 0:
             orderarg = ["id", "width", "height", "x", "y"]
             for i in range(len(args)):
                 setattr(self, orderarg[i], args[i])
