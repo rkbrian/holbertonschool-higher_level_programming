@@ -54,14 +54,10 @@ class Rectangle(Base):
 
     def update(self, *args):
         """assign arguments to each attribute"""
-        orderarg = ["id", "width", "height", "x", "y"]
-        """dictarg = {}
-        for i in range(len(args)):
-            dictarg.add(orderarg[i], args[i])
-        """
-        for i in range(len(args)):
-            setattr(self, orderarg[i], args[i])
-        return self.__str__
+        if args:
+            orderarg = ["id", "width", "height", "x", "y"]
+            for i in range(len(args)):
+                setattr(self, orderarg[i], args[i])
 
     @property
     def width(self):
