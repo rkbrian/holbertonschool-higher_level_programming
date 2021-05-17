@@ -52,12 +52,16 @@ class Rectangle(Base):
         str2 = " - {}/{}".format(self.__width, self.__height)
         return "[Rectangle] " + str1 + str2
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """assign arguments to each attribute"""
-        if args:
+        if args is True and len(args) > 0:
             orderarg = ["id", "width", "height", "x", "y"]
             for i in range(len(args)):
                 setattr(self, orderarg[i], args[i])
+        else:
+            for j in kwargs:
+                if hasattr(self, j) is True:
+                    setattr(self, j, kwargs[j])
 
     @property
     def width(self):
