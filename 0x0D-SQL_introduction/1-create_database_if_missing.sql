@@ -1,3 +1,3 @@
-/* 1. Create a database */
-/* Write a script that creates the database hbtn_0c_0 in your MySQL server. */
+-- 1. Create a database
+-- Write a script that creates the database hbtn_0c_0 in your MySQL server
 CREATE DATABASE hbtn_0c_0;
