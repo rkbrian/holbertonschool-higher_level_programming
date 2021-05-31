@@ -15,5 +15,5 @@ if __name__ == "__main__":
     cursor.execute("SELECT * FROM states")
     states = cursor.fetchall()
     for i in range(len(states)):
-        if states[i][1] == "N":
+        if states[i][1][0] == "N":
             print(states[i])
