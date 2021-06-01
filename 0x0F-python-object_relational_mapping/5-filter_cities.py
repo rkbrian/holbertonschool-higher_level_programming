@@ -22,8 +22,5 @@ if __name__ == "__main__":
     cities = cursor.fetchall()
     city_list = []
     for i in range(len(cities)):
-        city_list.append(cities[i])
-    if city_list = []:
-        print()
-    else:
-        print(", ".join(city_list))
+        city_list.append(cities[i][0])
+    print(", ".join(city_list))
