@@ -23,4 +23,7 @@ if __name__ == "__main__":
     city_list = []
     for i in range(len(cities)):
         city_list.append(cities[i])
-    print(", ".join(city_list))
+    if city_list = []:
+        print()
+    else:
+        print(", ".join(city_list))
