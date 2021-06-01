@@ -19,6 +19,8 @@ if __name__ == "__main__":
     cursor.execute("SELECT cities.name FROM cities \
     LEFT JOIN states ON cities.state_id = states.id \
     WHERE BINARY states.name = %s", (sys.argv[4],))
-    states = cursor.fetchall()
-    for i in range(len(states)):
-        print(states[i])
+    cities = cursor.fetchall()
+    city_list = []
+    for i in range(len(cities)):
+        city_list.append(cities[i])
+    print(", ".join(city_list))
