@@ -14,9 +14,8 @@ if __name__ == "__main__":
                          sys.argv[2],
                          sys.argv[3])
     cursor = db.cursor()
-    cursor.execute(
-        "SELECT cities.id, cities.name, states.name FROM
-        cities LEFT JOIN states ON cities.state_id = states.id")
+    cursor.execute("SELECT cities.id, cities.name, states.name \
+    FROM cities LEFT JOIN states ON cities.state_id = states.id")
     states = cursor.fetchall()
     for i in range(len(states)):
         print(states[i])
