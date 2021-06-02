@@ -16,7 +16,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     newsess = sessionmaker(bind=engine)
     news = newsess()
-    stateinf = news.query(State)
-    for states in stateinf:
-        if "a" in states.name:
-            print("{}: {}".format(states.id, states.name))
+    stateinf = news.query(State).filter(State.name == sys.argv[4]).first()
+    if stateinf is None:
+        print("Not found")
+    else:
+        print("{}".format(stateinf.id))
