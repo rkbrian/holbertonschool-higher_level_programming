@@ -3,7 +3,8 @@
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import City
+from model_city import City
+from model_state import Base, State
 
 
 if __name__ == "__main__":
@@ -12,6 +13,7 @@ if __name__ == "__main__":
         .format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
-    session = Session()
-    for city in session.query(City):
-        print("{}: ({}) {}".format(city.state_id, city.id, city.name))
+    sess = Session()
+    combo_sess = sess.query(City, State).filter(City.state_id == State.id).all()
+    for city, state in combo_sess:
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
