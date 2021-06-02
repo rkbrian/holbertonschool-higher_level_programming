@@ -14,6 +14,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     sess = Session()
-    combo_sess = sess.query(City, State).filter(City.state_id == State.id).all()
+    combo_sess = sess.query(City, State).\
+                 filter(City.state_id == State.id).all()
     for city, state in combo_sess:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
