@@ -14,7 +14,7 @@ class Rectangle {
 Rectangle.prototype.print = function () {
   for (let i = 0; i < this.height; i++) {
     const xtext = 'X'.repeat(this.width);
-      console.log(xtext);
+    console.log(xtext);
   }
-}
+};
 module.exports = Rectangle;
