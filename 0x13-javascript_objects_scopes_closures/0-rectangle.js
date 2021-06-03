@@ -1,2 +1,4 @@
 #!/usr/bin/node
-module.export.Rectangle = function () {};
+// Write an empty class Rectangle that defines a rectangle, with <class> notation
+const Rectangle = class {};
+module.exports = Rectangle;
