@@ -19,9 +19,11 @@ Rectangle.prototype.print = function () {
     console.log(xtext);
   }
 };
+// instance method rotate()
 Rectangle.prototype.rotate = function () {
   [this.width, this.height] = [this.height, this.width];
 };
+// instance method double()
 Rectangle.prototype.double = function () {
   [this.width, this.height] = [this.width * 2, this.height * 2];
 };
