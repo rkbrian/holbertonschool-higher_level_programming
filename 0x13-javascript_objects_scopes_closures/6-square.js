@@ -5,18 +5,18 @@
 //   that prints the rectangle using the character c
 
 // importing Square from file
-const Squara = require('./4-rectangle');
+const Squara = require('./5-square');
 // Square as the extension of the old Square
 class Square extends Squara {
-  charPrint = function (c) {
-    if (typeof(c) === 'undefined') {
-      const ctext = 'X';
-    } else {
-      const ctext = c;
+  charPrint (c) {
+    let ctext = c;
+    if (typeof c === 'undefined') {
+      ctext = 'X';
     }
-    for (let i = 0; i < this.size; i++) {
-      ctext.repeat(this.size);
-      console.log(ctext);
+    for (let i = 0; i < this.height; i++) {
+      const whatext = ctext.repeat(this.width);
+      console.log(whatext);
     }
-};
+  }
+}
 module.exports = Square;
