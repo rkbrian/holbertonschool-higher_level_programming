@@ -1,7 +1,9 @@
 #!/usr/bin/node
-// JavaScript script that fetches the
-//   character name from a certain URL.
-const headercol = $("#character").click(function() {
-    $("character").getJSON("https://swapi-api.hbtn.io/api/people/5/?format=json",
-    "name");
+// JavaScript script that fetches and lists the
+//   title for all movies by using a certain URL.
+const headercol = $("header").click(function() {
+    $.get("https://swapi-api.hbtn.io/api/people/5/?format=json",
+    function(data) {
+        $("#list_movies").html(data.title);
+    });
 });
