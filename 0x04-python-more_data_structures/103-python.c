@@ -7,7 +7,7 @@
 void print_python_list(PyObject *p)
 {
 	PyListObject *pl;
-	Py_ssize_t i, j;
+	Py_ssize_t i, j = 0;
 	const char *s;
 
 	pl = (PyListObject *)p;
@@ -23,13 +23,13 @@ void print_python_list(PyObject *p)
 			printf("%s\n", pl->ob_item[i]->ob_type->tp_name);
 			print_python_bytes(pl->ob_item[i]);
 		}
-		if (j == 1)
-			s = pl->ob_item[0]->ob_type->tp_name;
-		if ((s[0] == 's'))
-		{
-			printf("[.] bytes object info\n");
-			fprintf(stderr, "  [ERROR] Invalid Bytes Object\n");
-		}
+	}
+	if (j == 1)
+		s = pl->ob_item[0]->ob_type->tp_name;
+	if ((s[0] == 's') && (j == 1))
+	{
+		printf("[.] bytes object info\n");
+		printf("  [ERROR] Invalid Bytes Object\n");
 	}
 }
 
