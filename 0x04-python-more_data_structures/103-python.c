@@ -8,9 +8,10 @@ void print_python_list(PyObject *p)
 {
 	PyListObject *pl;
 	Py_ssize_t i, j;
+	const char *s;
 
 	pl = (PyListObject *)p;
-	if (pl != NULL && PyList_Check(pl))
+	if (pl && PyList_Check(pl))
 	{
 		j = PyList_Size(p);
 		printf("[*] Python list info\n");
@@ -21,6 +22,13 @@ void print_python_list(PyObject *p)
 			printf("Element %zd: ", i);
 			printf("%s\n", pl->ob_item[i]->ob_type->tp_name);
 			print_python_bytes(pl->ob_item[i]);
+		}
+		if (j == 1)
+			s = pl->ob_item[0]->ob_type->tp_name;
+		if ((s[0] == 's'))
+		{
+			printf("[.] bytes object info\n");
+			fprintf(stderr, "  [ERROR] Invalid Bytes Object\n");
 		}
 	}
 }
@@ -35,7 +43,7 @@ void print_python_bytes(PyObject *p)
 	Py_ssize_t i, j;
 
 	pb = (PyBytesObject *)p;
-	if (pb != NULL && PyBytes_Check(pb))
+	if (p && PyBytes_Check(p))
 	{
 		printf("[.] bytes object info\n");
 		for (i = 0; i < pb->ob_base.ob_size; i++)
@@ -50,4 +58,5 @@ void print_python_bytes(PyObject *p)
 			printf(" %02x", pb->ob_sval[j] & 0xff);
 		printf("\n");
 	}
+	return;
 }
