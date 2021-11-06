@@ -9,6 +9,7 @@ void print_python_list(PyObject *p)
 	PyListObject *pl;
 	Py_ssize_t i, j;
 
+	setbuf(stdout, NULL);
 	pl = (PyListObject *)p;
 	if (pl != NULL && PyList_Check(pl))
 	{
@@ -48,6 +49,7 @@ void print_python_bytes(PyObject *p)
 	PyBytesObject *pb;
 	Py_ssize_t i, j;
 
+	setbuf(stdout, NULL);
 	if (p != NULL && PyBytes_Check(p))
 	{
 		pb = (PyBytesObject *)p;
@@ -80,6 +82,7 @@ void print_python_float(PyObject *p)
 	PyFloatObject *pf;
 	int a;
 
+	setbuf(stdout, NULL);
 	if (p != NULL && PyFloat_Check(p))
 	{
 		pf = (PyFloatObject *)p;
